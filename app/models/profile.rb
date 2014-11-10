@@ -1,6 +1,6 @@
 class Profile < ActiveRecord::Base
-  attr_reader :user_id, :cheese_id
-  attr_accessor :values, :parameter_name
+
+  attr_accessor :values, :associations
 
   validates :user_id, :cheese_id, presence: true
   
@@ -15,11 +15,20 @@ class Profile < ActiveRecord::Base
 
   private
 
+  def associate_parameters
+    @associations.each_value do |x|
+      CheeseProfileParameter.create(cheese_id: @cheese_id, profile_id: @id, parameter_id: x)
+    end
+  end
 
+  def build_values
+    result = {:funky => 0, :sweet => 0, :sour => 0, :salty => 0, :bitter => 0, :savory => 0}
+    parameters = Parameter.joins(:cheese_profile_parameters).where(CheeseProfileParameter: {profile_id: @id})
+     result.each_pair do |k,v|
+      result[k] = parameters.sum(k)
+    end
+    @values = result
+  end
 
-  # def build_values
-  #   result = {:funky => 0, :sweet => 0, :sour => 0, :salty => 0, :bitter => 0, :savory => 0}
-  #   @profiles_parameters.each do |x|
-  #     cheese = x.cheese
 
 end

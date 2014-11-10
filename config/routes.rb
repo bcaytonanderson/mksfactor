@@ -6,7 +6,9 @@ Rails.application.routes.draw do
     root to: "/users"
   end
 
-  resources :users
+  resources :users do
+    resources :users_parameters, :only => [:index, :create, :update]
+  end
 
   resources :cheeses do
     resources :profiles do

@@ -61,12 +61,12 @@ var colorscale = d3.scale.category10();
 //Data
 var d = [
       [
-      {axis:"funky",value:<%= ((@profile.values[:funky] / (@cheese.profiles_count).to_f) / 36.0) %>},
-      {axis:"sweet",value:<%= ((@profile.values[:sweet] / (@cheese.profiles_count).to_f) / 36.0) %>},
-      {axis:"sour",value:<%= ((@profile.values[:sour] / (@cheese.profiles_count).to_f) / 36.0) %>},
-      {axis:"salty",value:<%= ((@profile.values[:salty] / (@cheese.profiles_count).to_f) / 36.0) %>},
-      {axis:"bitter",value:<%= ((@profile.values[:bitter] / (@cheese.profiles_count).to_f) / 36.0) %>},
-      {axis:"savory",value:<%= ((@profile.values[:savory] / (@cheese.profiles_count).to_f) / 36.0) %>},
+      {axis:"funky",value:<%= ((@cheese.total_scores[:funky] / (@cheese.profiles_count).to_f) + 6/ 36.0) %>},
+      {axis:"sweet",value:<%= ((@cheese.total_scores[:sweet] / (@cheese.profiles_count).to_f) + 6/ 36.0) %>},
+      {axis:"sour",value:<%= ((@cheese.total_scores[:sour] / (@cheese.profiles_count).to_f) + 6/ 36.0) %>},
+      {axis:"salty",value:<%= ((@cheese.total_scores[:salty] / (@cheese.profiles_count).to_f) + 6/ 36.0) %>},
+      {axis:"bitter",value:<%= ((@cheese.total_scores[:bitter] / (@cheese.profiles_count).to_f) + 6/ 36.0) %>},
+      {axis:"savory",value:<%= ((@cheese.total_scores[:savory] / (@cheese.profiles_count).to_f) + 6/ 36.0) %>},
       ]
     ];
  

@@ -4,15 +4,22 @@ class ProfilesController < ApplicationController
   end
 
   def create
-    @profile = Profile.new()
+    @cheese = Cheese.find(params[:profile][:cheese_id])
+    @all = Parameter.all
+    @profile = Profile.new(cheese_id: @cheese.id)
+    @parameters = params[:parameters]
     if @profile.save
       redirect_to "/cheeses/#{@profile.cheese_id}"
+    else
+      render 'new'
+    end
   end
 
   def new
+    @cheese = Cheese.find(params[:cheese_id])
     @profile = Profile.new
     @profile.associations = params[:parameters]
-    @all = Parameters.all
+    @all = Parameter.all
   end
 
   def show
@@ -30,7 +37,7 @@ class ProfilesController < ApplicationController
   private
 
   def profile_params
-    params.require(:group).permit(:user_id, :cheese_id)
+    params.require(:profile).permit(:user_id, :cheese_id, :associations)
   end
 
 end

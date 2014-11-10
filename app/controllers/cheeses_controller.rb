@@ -1,5 +1,5 @@
 class CheesesController < ApplicationController
-  before_action :authenticate_user!, :except => :index
+  before_action :authenticate_user!
 
    
   def index
@@ -20,12 +20,12 @@ class CheesesController < ApplicationController
   end
 
   def new
-    @cheese = Cheese.new(user_id: current_user.id, cheese_id: params[:id])
-    @all = Parameters.all
+    @cheese = Cheese.new(user_id: current_user.id)
+    @all = parameters.all
   end
 
   def show
-    @cheese = Cheese.includes(:profiles).find(params[:id])
+    @cheese = Cheese.includes(:parameters).find(params[:id])
     if @cheese.profiles.exists?(:cheese_id => @cheese.id)
       @profiles = @profiles
     else 

@@ -1,5 +1,5 @@
 class Cheese < ActiveRecord::Base
-  attr_reader :user_id
+  attr_accessor :user_id, :total_scores, :parameter_count
 
   validates :name, :producer, presence: true
   
@@ -14,8 +14,12 @@ class Cheese < ActiveRecord::Base
   after_find :build_values
 
   def build_values
-    result = {}
+    result = {:funky => 0, :sweet => 0, :sour => 0, :salty => 0, :bitter => 0, :savory => 0}
+    parameters = Parameter.joins(:cheese_profile_parameters).where(cheese_profile_parameters: {cheese_id: @id})
+     result.each_pair do |k,v|
+      result[k] = parameters.sum(k)
+    end
+    @total_scores = result
   end
-
 
 end

@@ -8,5 +8,8 @@ class User < ActiveRecord::Base
 
   has_many :profiles
   has_many :cheeses
+
+  has_many :users_parameters
+  has_many :parameters, through: :users_parameters
   
 end
