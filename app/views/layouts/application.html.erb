@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Factor1</title>
+  <title>Factor</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link href='http://fonts.googleapis.com/css?family=Neuton:400,700,800,400italic' rel='stylesheet' type='text/css'>
+  <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 </head>
 <body>
-
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+<!-- find a better place for this -->
 
 <%= yield %>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
 
 </body>
 </html>

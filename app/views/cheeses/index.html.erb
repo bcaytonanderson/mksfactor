@@ -1,0 +1,53 @@
+<div id='container'>
+  <h2>Cheeses</h2>
+  <h3>Fresh</h3>
+    <ul>
+      <% if @cheeses['fresh']; @cheeses['fresh'].each do |x| %>
+        <li class='item'><%= link_to x.name, cheese_path(x.id)%></li>
+      <% end %>
+      <% end %>
+    </ul>
+  <h3>Soft-Ripened</h3>
+    <ul>
+      <% if @cheeses['soft-ripened']; @cheeses['soft-ripened'].each do |x| %>
+        <li class='item'><%= link_to "#{x.name} - #{x.producer}", cheese_path(x.id)%></li>
+      <% end %>
+      <% end %>
+    </ul>
+  <h3>Washed Rind</h3>
+    <ul>
+      <% if @cheeses['washed rind']; @cheeses['washed rind'].each do |x| %>
+        <li class='item'><%= link_to x.name, cheese_path(x.id)%></li>
+      <% end %>
+      <% end %>
+    </ul>
+  <h3>Semi-soft</h3>
+    <ul>
+      <% if @cheeses['semi-soft']; @cheeses['semi-soft'].each do |x| %>
+        <li class='item'><%= link_to "#{x.name}", cheese_path(x.id)%></li>
+      <% end %>
+      <% end %>
+    </ul>
+  <h3>Firm</h3>
+    <ul>
+      <% if @cheeses['firm']; @cheeses['firm'].each do |x| %>
+        <li class='item'><%= link_to x.name, cheese_path(x.id)%></li>
+      <% end %>
+      <% end %>
+    </ul>
+  <h3>Hard</h3>
+    <ul>
+      <% if @cheeses['hard']; @cheeses['hard'].each do |x| %>
+        <li class='item'><%= link_to x.name, cheese_path(x.id)%></li>
+      <% end %>
+      <% end %>
+    </ul>
+  <h3>Blue</h3>
+    <ul>
+      <% if @cheeses['blue']; @cheeses['blue'].each do |x| %>
+        <li class='item'><%= link_to x.name, cheese_path(x.id)%></li>
+      <% end %>
+      <% end %>
+    </ul>
+</div>
+  

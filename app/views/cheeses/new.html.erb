@@ -1,0 +1,28 @@
+<h2>New Entry:</h2>
+<p>Here, you can create an entry for a Cheese. Every entry needs at least the cheese's name and producer- don't worry if you don't know the rest!</p>
+
+<%= form_tag('/cheeses', method: 'POST') do %>
+  Name: <br><input type='text' name='cheese[name]' /><br>
+  Producer: <br><input type='text' name='cheese[producer]' /><br>
+  Region: <br><input type='text' name='cheese[region]' /><br/>
+  Milk: <br><input type='text' name='cheese[milk]' /><br>
+  Style: <br><select name='cheese[style]'>
+          <option value="fresh" selected>Fresh</option>
+          <option value="soft-ripened">Soft-ripened</option>
+          <option value="washed-rind">Washed rind</option>
+          <option value="semi-soft">Semi-soft</option>
+          <option value="firm">Firm</option>
+          <option value="hard">Hard</option>
+          <option value="blue">Blue</option>
+          </select><br>
+  Rennet:<br><select name='cheese[rennet]'>
+          <option value="vegetarian" selected>Vegetarian</option>
+          <option value="animal">Animal</option>
+          <option value="thistle">Thistle</option>
+          </select><br/>
+  Age: <br><input type='text' name='cheese[age]' /><br>
+  Availability: <br><input type='text' name='cheese[availability]' /><br/>
+  Story: <br><%= text_area_tag 'cheese[story]', "#{@cheese.story}", cols: 75, rows: 12, class: "bio-field" %><br/>
+  <input type="hidden" name='cheese[user_id]' value="<%= current_user.id %>" />
+  <input type='submit' value='submit'/>
+<% end %>

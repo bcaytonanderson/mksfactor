@@ -1,0 +1,336 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+body {
+  margin: 0 1em;
+  color: black;
+  background-color: white;
+
+}
+p {
+  margin: 1em auto;
+  font-size: 1.25em;
+  text-align: justify;
+}
+h1 {
+  color: #eee;
+  font-family: 'Neuton', serif;
+  font-size: 5em;
+  font-weight: 700;
+}
+h2 {
+  color: #FF9F3D;
+  font-family: 'Neuton', serif;
+  font-size: 5em;
+  font-weight: 700;
+}
+h3 {
+  font-family: 'Neuton', serif;
+  font-size: 3em;
+  font-weight: 700;
+  margin: 5px;
+}
+h1 em {
+  color: #FF9F3D;
+  font-weight: 800;
+  text-decoration: underline;
+}
+h4 {
+  display: inline-block;
+  font-size: 3em;
+  font-family: 'Times', serif;
+  background-color: #0c65af;
+  color: white;
+  font-weight: 700;
+  font-size: 2em;
+  margin: 0;
+}
+h5 {
+  display: block;
+  font-family: Times, serif;
+  color: #0c65af;
+  font-size: 1.5em;
+  font-weight: 700;
+  margin: 0 0 0.5em 0;
+}
+p em {
+  font-size: 1.25em;
+  color: #FF9F3D;
+  font-weight: 700; 
+}
+td {
+  width: 50%;
+  vertical-align: middle;
+  p {
+    font-size: 1.25em;
+  }
+}
+
+form.new-thing {
+  text-align: center;
+}
+select {
+  margin: 5px;
+}
+input.button {
+  margin: 0 auto;
+  font-family: 'Neuton', serif;
+  width: 100px;
+  border: 0;
+  background-color: #FF9F3D;
+  color: white;
+  font-size: 2em;
+  font-weight: 700;
+}
+
+#header {
+  width: 600px;
+  margin: 2em auto 0 auto;
+  padding: 10px;
+  background-color: #0c65af;
+  text-align: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+#container {
+  width: 600px;
+  border: 2px solid #0c65af;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  font-family: 'Neuton', serif;
+  font-size: 1em;
+  padding: 10px;
+  margin: 0 auto 10px auto;
+  table {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 10px 5px 0 0;
+    vertical-align: top;
+
+    td {
+      overflow-y: hidden;
+      width: 50%;
+      height: 38px;
+      padding: 2px 2px 0 2px;
+      vertical-align: top;
+      p {
+        text-align: left;
+        padding-left: 5px;
+        margin: 0;
+        font-family: Times, serif;
+        font-weight: 500;
+        color: black;
+      }
+      h5 {
+        box-sizing: border-box;
+        display: inline-block;
+        padding-left: 5px;
+      }
+    }
+  }
+  div.story {
+    display: block;
+    width: 576px;
+    
+    margin: 10px 0 0 0;
+    border: 2px solid #0c65af;
+    border-radius: 10px;
+    .story-nav {
+      width: 100%;
+      margin: 5px 0 10px 0;
+      text-align: center;
+    }
+    .story-link {
+      box-sizing: border-box;
+      display: inline-block;
+      margin: 0 1px;
+      padding: 1px 0;
+      width: 184px;
+      font-family: Times, serif;
+      font-size: 1.5em;
+      font-weight: 600;
+      color: #111;
+      border: 2px solid #0c65af;
+      background-color: #0c65af;
+      border-radius: 5px;
+      a {
+        color: white;
+        display: block;
+        text-decoration: none;
+        width: 100%;
+        height: 100%;
+      }
+      a:visited {
+        color: white;
+      }
+    }  
+    p {
+      margin: 5px 10px 10px 10px;
+      font-size: 1.25em;
+      font-family: Times, serif;
+      font-weight: 575;
+      color: black;
+    }
+  }
+}
+#front {
+  width: 400px;
+  font-family: 'Neuton', serif;
+  font-size: 1em;
+  padding: 1em;
+  margin: 2em auto 1em auto;
+  p {
+    font-size: 1.5em;
+    line-height: 1.5em;
+  }
+}
+#chart-container {
+  display: block;
+  width: 283px;
+  float: left;
+  margin-right: 10px;
+  border: 2px solid #FF9F3D;
+  border-radius: 10px;
+  .chart-nav {
+    width: 100%;
+    margin: 5px 0;
+    text-align: center;
+    .chart-link {
+      box-sizing: border-box;
+      display: inline-block;
+      margin: 0 1px;
+      padding: 1px 0;
+      width: 132px;
+      font-family: Times, serif;
+      font-size: 1.5em;
+      font-weight: 600;
+      color: white;
+      border: 2px solid #FF9F3D;
+      background-color: #ff9f3d;
+      border-radius: 5px;
+      a {
+        color: white;
+        display: block;
+        text-decoration: none;
+        width: 100%;
+        height: 100%;
+      }
+        a:visited {
+          color: white;
+        }
+    }
+  }
+}
+#info {
+  float: left;
+  display: block;
+  width: 283px;
+  height: 312px;
+  border: 2px solid #0c65af;
+  border-radius: 10px;
+  .info-nav {
+    width: 100%;
+    margin: 7px 0 5px 0;
+    text-align: center;
+    .info-link {
+      box-sizing: border-box;
+      display: inline-block;
+      margin: 0 1px 5px 1px;
+      padding: 1px 0;
+      width: 132px;
+      font-family: Times, serif;
+      font-size: 1.5em;
+      font-weight: 600;
+      color: white;
+      border: 2px solid #0c65af;
+      background-color: #0c65af;
+      border-radius: 5px;
+      a {
+        color: white;
+        display: block;
+        text-decoration: none;
+        width: 100%;
+        height: 100%;
+      }
+        a:visited {
+          color: white;
+        }
+    }
+  }
+}
+#front ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  li.sign-in {
+    float: left;
+    text-align: center;
+    display: inline;
+    box-sizing: border-box;
+    margin: 0 0.5em 0 0;
+    a {
+      padding: 0.5em;
+      font-size: 1.5em;
+      display: inline-block;
+      width: 183.5px;
+      background-color: #FF9F3D;
+      color: white;
+      font-weight: 700;
+      text-decoration: none;
+    }
+  }
+  li.sign-out {
+    float: right;
+    text-align: center;
+    display: inline;
+    box-sizing: border-box;
+    margin: 0 0 0 0.5em;
+    a {
+      padding: 0.5em;
+      font-size: 1.5em;
+      display: inline-block;
+      width: 183.5px;
+      background-color: #FF9F3D;
+      color: white;
+      font-weight: 700;
+      text-decoration: none;
+    }
+  }
+
+  li.item {
+    display: block;
+    margin: 0.5em 10px;
+    text-align: justify;
+    a {
+    padding: 0.5em;
+    font-size: 1.5em;
+    display: inline-block;
+    width: 183.5px;
+    background-color: #FF9F3D;
+    color: white;
+    font-weight: 700;
+    text-decoration: none;
+    }
+  }
+}
+input {
+  margin: 0 0 10px 0;
+}
+
+#user_email, #user_password {
+  width: 50%
+}

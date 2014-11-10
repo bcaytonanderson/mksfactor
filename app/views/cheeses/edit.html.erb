@@ -1,0 +1,33 @@
+<h2>New Entry:</h2>
+<p>Here, you can create an entry for a Cheese. Every entry needs at least the cheese's name and producer- don't worry if you don't know the rest!</p>
+
+<%= form_tag("/cheeses/#{@cheese.id}", method: 'PUT') do %>
+  Name: <br><input type='text' value='<%= @cheese.name %>' name='cheese[name]' /><br/>
+  Producer: <br><input type='text' value='<%= @cheese.producer %>' name='cheese[producer]' /><br/>
+  Region: <br><input type='text'value="<%= @cheese.region ||= ' ' %>"  name='cheese[region]' /><br/>
+  Milk: <br><input type='text' value="<%= @cheese.milk %>" name='cheese[milk]' /><br>
+  Style: <br><select name='cheese[style]'>
+          <% if @cheese.style %>
+          <option value='<%= @cheese.style %>' selected><%= @cheese.style %></option>
+          <% end %>
+          <option value="fresh">Fresh</option>
+          <option value="soft-ripened">Soft-ripened</option>
+          <option value="washed-rind">Washed rind</option>
+          <option value="semi-soft">Semi-soft</option>
+          <option value="firm">Firm</option>
+          <option value="hard">Hard</option>
+          <option value="blue">Blue</option>
+          </select><br>
+  Rennet:<br><select name='cheese[rennet]'>
+          <% if @cheese.rennet %>
+          <option value="<%= @cheese.rennet %>" selected><%= @cheese.rennet %></option>
+          <% end %>
+          <option value="vegetarian">Vegetarian</option>
+          <option value="animal">Animal</option>
+          <option value="thistle">Thistle</option>
+          </select><br/>
+  Age: <br><input type='text' value="<%= @cheese.age  ||= ' ' %>" name='cheese[age]' /><br/>
+  Availability: <br><input type='text' value="<%= @cheese.availability  ||= ' ' %>" name='cheese[availability]' /><br/>
+  Story: <br><%= text_area_tag 'cheese[story]', "#{@cheese.story}", cols: 75, rows: 13, class: "bio-field" %><br/>
+  <input type='submit' value='submit'/>
+<% end %>

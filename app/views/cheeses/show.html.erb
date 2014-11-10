@@ -1,0 +1,89 @@
+<div id='header'><h4><%= @cheese.name %></h4></div>
+
+  <div id='container' class='clear'>
+
+
+<div class='info clear'>
+  <div id='chart-container'>
+    <div id="chart"></div>
+    <ul class='chart-nav'>
+      <li class='chart-link'><%= link_to "details", cheese_profiles_path(@cheese.id)%></li>
+      <li class='chart-link'><%= link_to "new", new_cheese_profile_path(@cheese.id)%></li>
+    </ul>
+  </div>
+
+  <div id='info' class='clear'>
+    <table>
+      <tr>
+    <td><h5>Producer: </h5></td><td><p><%= (@cheese.producer ||= '(not specified)') %></p></td>
+      </tr>
+      <tr>
+    <td><h5>Region: </h5></td><td><p><%= (@cheese.region ||= '(not specified)') %></p></td>
+    </tr>
+    <tr>
+    <td><h5>Style: </h5></td><td><p><%= (@cheese.style ||= '(not specified)').capitalize %></p></td>
+    </tr>
+    <tr>
+    <td><h5>Milk Type: </h5></td><td><p><%= (@cheese.milk ||= '(not specified)') %></p></td>
+    </tr>
+    <tr>
+    <td><h5>Rennet: </h5></td><td><p><%= (@cheese.rennet ||= '(not specified)').capitalize %></p></td>
+    </tr>
+    <tr>
+    <td><h5>Age: </h5></td><td><p><%= (@cheese.age ||= '(not specified)') %></p></td>
+    </tr>
+    <tr>
+    <td><h5>Availability: </h5></td><td><p><%= (@cheese.availability ||= '(not specified)') %></p></td>
+    </tr>
+    </table>
+  <ul class='info-nav'>
+      <li class='info-link'><%= link_to "edit", edit_cheese_path(@cheese.id)%></li>
+      <li class='info-link'><%= link_to "pair", "#" %></li>
+    </ul>
+  </div>
+</div>
+  <div class='story'>
+  <ul class='story-nav'>
+      <li class='story-link'><%= link_to "story", "#" %></li>
+      <li class='story-link'><%= link_to "reviews", "#" %></li>
+      <li class='story-link'><%= link_to "pairings", "#" %></li>
+    </ul>
+  <%= simple_format(@cheese.story ||= '(not specified)') %></div>
+</div>
+
+
+<script>
+  var w = 200,
+      h = 200;
+ 
+var colorscale = d3.scale.category10();
+  
+//Data
+var d = [
+      [
+      {axis:"funky",value:<%= ((@profile.values[:funky] / (@cheese.profiles_count).to_f) / 36.0) %>},
+      {axis:"sweet",value:<%= ((@profile.values[:sweet] / (@cheese.profiles_count).to_f) / 36.0) %>},
+      {axis:"sour",value:<%= ((@profile.values[:sour] / (@cheese.profiles_count).to_f) / 36.0) %>},
+      {axis:"salty",value:<%= ((@profile.values[:salty] / (@cheese.profiles_count).to_f) / 36.0) %>},
+      {axis:"bitter",value:<%= ((@profile.values[:bitter] / (@cheese.profiles_count).to_f) / 36.0) %>},
+      {axis:"savory",value:<%= ((@profile.values[:savory] / (@cheese.profiles_count).to_f) / 36.0) %>},
+      ]
+    ];
+ 
+//Options for the Radar chart, other than default
+var mycfg = {
+  w: w,
+  h: h,
+  maxValue: 1.0,
+  levels: 3,
+  ExtraWidthX: 107
+}
+ 
+//Call function to draw the Radar chart
+//Will expect that data is in %'s
+RadarChart.draw("#chart", d, mycfg);
+
+
+</script>
+
+

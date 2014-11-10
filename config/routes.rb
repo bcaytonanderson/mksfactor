@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
 
-  root 'application#index'
+  root "application#index"
 
   devise_for :users do
-    root to: 'users#index'
+    root to: "/users"
   end
+
+  resources :users
 
   resources :cheeses do
     resources :profiles do

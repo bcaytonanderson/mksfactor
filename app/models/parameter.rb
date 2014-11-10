@@ -1,6 +1,7 @@
 class Parameter < ActiveRecord::Base
 
-  has_many :profiles_parameters
-  has_many :profiles, through: :profiles_parameters
+  has_many :cheese_profile_parameter
+  has_many :profiles, through: :cheese_profile_parameters
+  has_many :cheeses, through: :cheese_profile_parameters
 
 end

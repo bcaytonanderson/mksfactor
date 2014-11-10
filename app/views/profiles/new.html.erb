@@ -1,0 +1,49 @@
+<div id='header'><h4>Select up to 6 descriptors for <%= @cheese.name %>:</h4></div>
+<div id='container'>
+
+<%= form_tag("/cheeses/#{params[:cheese_id]}/profiles", method: 'POST', class: 'new-thing') do %>
+  Descriptor 1: <select name='parameters[0]' value='nil'>
+                  <option value="nil"></option>
+                  <% @all.each do |x| %>11
+                    <option value="<%= [x.id] %>"><%= x.name %></option>
+                  <% end %>
+                </select>
+  Descriptor 2: <select name='parameters[1]' value='nil'>
+                  <option value="nil"></option>
+                  <% @all.each do |x| %>
+                    <option value="<%= [x.id] %>"><%= x.name %></option>
+                  <% end %>
+                </select>
+  Descriptor 3: <select name='parameters[2]' value='nil'>
+                  <option value=nil></option>
+                  <% @all.each do |x| %>
+                    <option value="<%= [x.id] %>"><%= x.name %></option>
+                  <% end %>
+                </select>
+                <br>
+                <br>
+  Descriptor 4: <select name='parameters[3]' value='nil'>
+                  <option value=nil></option>
+                  <% @all.each do |x| %>
+                    <option value="<%= [x.id] %>"><%= x.name %></option>
+                  <% end %>
+                </select>
+  Descriptor 5: <select name='parameters[4]' value='nil'>
+                  <option value=nil></option>
+                  <% @all.each do |x| %>
+                    <option value="<%= [x.id] %>"><%= x.name %></option>
+                  <% end %>
+                </select>
+  Descriptor 6: <select name='parameters[5]' value='nil'>
+                  <option value=nil></option>
+                  <% @all.each do |x| %>
+                    <option value="<%= [x.id] %>"><%= x.name %></option>
+                  <% end %>
+                </select>
+  <input type="hidden" name="profile[values]" value='{:funky=>0, :sweet=>0, :sour=>0, :salty=>0, :bitter=>0, :savory=>0}'>
+  <input type="hidden" name='profile[cheese_id]' value="<%= @cheese.id %>" />
+  <br>
+  <br>
+  <input class='button' type='submit' value='submit'/>
+<% end %>
+</div>
