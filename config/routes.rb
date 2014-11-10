@@ -1,7 +1,18 @@
 Rails.application.routes.draw do
 
-  devise_for :users
-  root to: 'application#index'
+  root 'application#index'
+
+  devise_for :users do
+    root to: 'users#index'
+  end
+
+  resources :cheeses do
+    resources :profiles do
+      resources :profiles_parameters, :only => [:create, :update, :destroy]
+    end
+  end
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
