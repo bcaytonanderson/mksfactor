@@ -1,12 +1,9 @@
 class ProfilesController < ApplicationController
-  def index
-    
-  end
 
   def create
     @cheese = Cheese.find(params[:profile][:cheese_id])
     @all = Parameter.all
-    @profile = Profile.new(cheese_id: @cheese.id)
+    @profile = Profile.new(cheese_id: @cheese.id, user_id: current_user.id)
     @parameters = params[:parameters]
     if @profile.save
       redirect_to "/cheeses/#{@profile.cheese_id}"
@@ -23,15 +20,14 @@ class ProfilesController < ApplicationController
   end
 
   def show
+    @profile = Profile.includes(cheese: [{user: :username}], :parameters).where(cheese_id: params[:id], params[:user_id])
   end
 
   def edit
+
   end
 
   def update
-  end
-
-  def destroy
   end
 
   private

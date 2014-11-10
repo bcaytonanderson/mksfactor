@@ -1,1 +1,68 @@
-Hello there.
+<div id='header'>
+    <ul class='nav-list'>
+      <li class='nav-button'><%= link_to "guide", "#"%></li>
+      <li class='nav-button'><%= link_to "cheeses", "#"%></li>
+      <li class='nav-button'><%= link_to "profiles", "#"%></li>
+      <li class='nav-button'><%= link_to "invitations", "#"%></li>
+      <li class='nav-button'><%= link_to "parameters", "#"%></li>
+      <li class='nav-button'><%= link_to "sign out", "#"%></li>
+    </ul>
+</div>
+
+  <div id='container' class='clear'>
+
+
+<div class='info clear'>
+  <div id='index-left-container'>
+  <h2>factor</h2>
+    <ul class='nav-list'>
+      <li class='nav-button'><%= link_to "user controls", "#"%></li>
+      <li class='nav-button'><%= link_to "cheeses", "#"%></li>
+      <li class='nav-button'><%= link_to "profiles", "#"%></li>
+      <li class='nav-button'><%= link_to "invitations", "#"%></li>
+      <li class='nav-button'><%= link_to "set parameters", "#"%></li>
+      <li class='nav-button'><%= link_to "feedback", "#"%></li>
+    </ul>
+  </div>
+
+  <div id='index-right-container' class='clear'>
+  <table>
+      <tr>
+    <th><h5><%= current_user.username %></h5></th>
+      </tr>
+      <tr>
+    <td><h5>Region: </h5></td><td><p></p></td>
+    </tr>
+    <tr>
+    <td><h5>Style: </h5></td><td><p></p></td>
+    </tr>
+    <tr>
+    <td><h5>Milk Type: </h5></td><td><p></p></td>
+    </tr>
+    <tr>
+    <td><h5>Rennet: </h5></td><td><p></p></td>
+    </tr>
+    <tr>
+    <td><h5>Age: </h5></td><td><p></td>
+    </tr>
+    <tr>
+    <td><h5>Availability: </h5></td><td><p></p></td>
+    </tr>
+    </table>
+  <ul class='info-nav'>
+      <li class='info-link'><%= link_to "edit", "#"%></li>
+      <li class='info-link'><%= link_to "pair", "#" %></li>
+    </ul>
+  </div>
+</div>
+  <div class='story'>
+  <ul class='story-nav'>
+      <li class='story-link'><%= link_to "story", "#" %></li>
+      <li class='story-link'><%= link_to "reviews", "#" %></li>
+      <li class='story-link'><%= link_to "pairings", "#" %></li>
+    </ul>
+  <%= simple_format("Stuff goes here") %></div>
+</div>
+
+
+

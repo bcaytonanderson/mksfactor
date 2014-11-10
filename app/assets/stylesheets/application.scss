@@ -14,6 +14,9 @@
  *= require_self
  */
 
+$orange: #FF9F3D;
+$blue: #0c65af;
+
 body {
   margin: 0 1em;
   color: black;
@@ -32,7 +35,7 @@ h1 {
   font-weight: 700;
 }
 h2 {
-  color: #FF9F3D;
+  color: $orange;
   font-family: 'Neuton', serif;
   font-size: 5em;
   font-weight: 700;
@@ -44,7 +47,7 @@ h3 {
   margin: 5px;
 }
 h1 em {
-  color: #FF9F3D;
+  color: $orange;
   font-weight: 800;
   text-decoration: underline;
 }
@@ -52,7 +55,7 @@ h4 {
   display: inline-block;
   font-size: 3em;
   font-family: 'Times', serif;
-  background-color: #0c65af;
+  background-color: $blue;
   color: white;
   font-weight: 700;
   font-size: 2em;
@@ -61,21 +64,21 @@ h4 {
 h5 {
   display: block;
   font-family: Times, serif;
-  color: #0c65af;
+  color: $blue;
   font-size: 1.5em;
   font-weight: 700;
   margin: 0 0 0.5em 0;
 }
 p em {
   font-size: 1.25em;
-  color: #FF9F3D;
+  color: $orange;
   font-weight: 700; 
 }
 td {
   width: 50%;
   vertical-align: middle;
   p {
-    font-size: 1.25em;
+    font-size: 1.5em;
   }
 }
 
@@ -90,7 +93,7 @@ input.button {
   font-family: 'Neuton', serif;
   width: 100px;
   border: 0;
-  background-color: #FF9F3D;
+  background-color: $orange;
   color: white;
   font-size: 2em;
   font-weight: 700;
@@ -100,14 +103,46 @@ input.button {
   width: 600px;
   margin: 2em auto 0 auto;
   padding: 10px;
-  background-color: #0c65af;
+  background-color: $blue;
   text-align: center;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+  .nav-list {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    .nav-button {
+      box-sizing: border-box;
+      display: inline-block;
+      margin: 0 auto;
+      // height: 83px;
+      // line-height: 83px;
+      // padding: 4px 0;
+      width: (500px/6);
+      font-family: Times, serif;
+      font-size: 1.5em;
+      font-weight: 600;
+      color: white;
+      border: 2px solid $blue;
+      background-color: $blue;
+      border-radius: 5px;
+      a {
+        color: white;
+        display: block;
+        text-decoration: none;
+        width: 100%;
+        height: 100%;
+      }
+        a:visited {
+          color: white;
+        }
+    }
+  }
 }
 #container {
   width: 600px;
-  border: 2px solid #0c65af;
+  border: 2px solid $blue;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   font-family: 'Neuton', serif;
@@ -120,7 +155,19 @@ input.button {
     width: 100%;
     margin: 10px 5px 0 0;
     vertical-align: top;
-
+    th {
+      overflow-y: hidden;
+      width: 100%;
+      height: 38px;
+      padding: 2px 2px 0 2px;
+      vertical-align: top;
+      h5 {
+        box-sizing: border-box;
+        display: inline-block;
+        padding-left: 5px;
+        width: 100%
+      }
+    }
     td {
       overflow-y: hidden;
       width: 50%;
@@ -147,7 +194,7 @@ input.button {
     width: 576px;
     
     margin: 10px 0 0 0;
-    border: 2px solid #0c65af;
+    border: 2px solid $blue;
     border-radius: 10px;
     .story-nav {
       width: 100%;
@@ -164,8 +211,8 @@ input.button {
       font-size: 1.5em;
       font-weight: 600;
       color: #111;
-      border: 2px solid #0c65af;
-      background-color: #0c65af;
+      border: 2px solid $blue;
+      background-color: $blue;
       border-radius: 5px;
       a {
         color: white;
@@ -187,6 +234,89 @@ input.button {
     }
   }
 }
+
+#index-left-container {
+  width: 283px;
+    height: 308px;
+  float: left;
+  margin-right: 10px;
+  border: 2px solid $blue;
+  border-radius: 10px;
+  h2 {
+    margin: -10px 0 0 0;
+  }
+  .nav-list {
+    width: 100%;
+    margin: 7px 0 5px 0;
+    padding: 0 5px 5px 5px;
+    text-align: center;
+    .nav-button {
+      box-sizing: border-box;
+      display: block;
+      margin: 7px auto;
+      // height: 83px;
+      // line-height: 83px;
+      padding: 4px 0;
+      width: 100%;
+      font-family: Times, serif;
+      font-size: 2em;
+      font-weight: 600;
+      color: white;
+      border: 2px solid $blue;
+      background-color: $blue;
+      border-radius: 5px;
+      a {
+        color: white;
+        display: block;
+        text-decoration: none;
+        width: 100%;
+        height: 100%;
+      }
+        a:visited {
+          color: white;
+        }
+    }
+  }
+}
+#index-right-container {
+  float: left;
+  display: block;
+  width: 283px;
+  height: 312px;
+  border: 2px solid $orange;
+  border-radius: 10px;
+  .info-nav {
+    width: 100%;
+    margin: 7px 0 5px 0;
+    text-align: center;
+    .info-link {
+      box-sizing: border-box;
+      display: inline-block;
+      margin: 0 1px 5px 1px;
+      padding: 1px 0;
+      width: 132px;
+      font-family: Times, serif;
+      font-size: 1.5em;
+      font-weight: 600;
+      color: white;
+      border: 2px solid $blue;
+      background-color: $blue;
+      border-radius: 5px;
+      a {
+        color: white;
+        display: block;
+        text-decoration: none;
+        width: 100%;
+        height: 100%;
+      }
+        a:visited {
+          color: white;
+        }
+    }
+  }
+}
+
+
 #front {
   width: 400px;
   font-family: 'Neuton', serif;
@@ -203,7 +333,7 @@ input.button {
   width: 283px;
   float: left;
   margin-right: 10px;
-  border: 2px solid #FF9F3D;
+  border: 2px solid $orange;
   border-radius: 10px;
   .chart-nav {
     width: 100%;
@@ -219,8 +349,8 @@ input.button {
       font-size: 1.5em;
       font-weight: 600;
       color: white;
-      border: 2px solid #FF9F3D;
-      background-color: #ff9f3d;
+      border: 2px solid $orange;
+      background-color: $orange;
       border-radius: 5px;
       a {
         color: white;
@@ -240,7 +370,7 @@ input.button {
   display: block;
   width: 283px;
   height: 312px;
-  border: 2px solid #0c65af;
+  border: 2px solid $blue;
   border-radius: 10px;
   .info-nav {
     width: 100%;
@@ -256,8 +386,8 @@ input.button {
       font-size: 1.5em;
       font-weight: 600;
       color: white;
-      border: 2px solid #0c65af;
-      background-color: #0c65af;
+      border: 2px solid $blue;
+      background-color: $blue;
       border-radius: 5px;
       a {
         color: white;
@@ -287,7 +417,7 @@ input.button {
       font-size: 1.5em;
       display: inline-block;
       width: 183.5px;
-      background-color: #FF9F3D;
+      background-color: $orange;
       color: white;
       font-weight: 700;
       text-decoration: none;
@@ -304,7 +434,7 @@ input.button {
       font-size: 1.5em;
       display: inline-block;
       width: 183.5px;
-      background-color: #FF9F3D;
+      background-color: $orange;
       color: white;
       font-weight: 700;
       text-decoration: none;
@@ -320,7 +450,7 @@ input.button {
     font-size: 1.5em;
     display: inline-block;
     width: 183.5px;
-    background-color: #FF9F3D;
+    background-color: $orange;
     color: white;
     font-weight: 700;
     text-decoration: none;

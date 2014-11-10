@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   end
 
   resources :users do
-    resources :users_parameters, :only => [:index, :create, :update]
+    resources :users_parameters, :only => [:index, :create, :edit, :update]
   end
 
   resources :cheeses do

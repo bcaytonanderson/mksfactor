@@ -86,12 +86,12 @@ ActiveRecord::Schema.define(version: 20141110171307) do
     t.integer  "user_id"
     t.integer  "parameter_id"
     t.string   "name"
-    t.integer  "funky"
-    t.integer  "sweet"
-    t.integer  "sour"
-    t.integer  "salty"
-    t.integer  "bitter"
-    t.integer  "savory"
+    t.integer  "funky",        default: 0, null: false
+    t.integer  "sweet",        default: 0, null: false
+    t.integer  "sour",         default: 0, null: false
+    t.integer  "salty",        default: 0, null: false
+    t.integer  "bitter",       default: 0, null: false
+    t.integer  "savory",       default: 0, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

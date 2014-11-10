@@ -4,12 +4,12 @@ class CreateUsersParameters < ActiveRecord::Migration
       t.references :user
       t.references :parameter
       t.string :name
-      t.integer :funky
-      t.integer :sweet
-      t.integer :sour
-      t.integer :salty
-      t.integer :bitter
-      t.integer :savory
+      t.integer :funky, default: 0, null: false
+      t.integer :sweet, default: 0, null: false
+      t.integer :sour, default: 0, null: false
+      t.integer :salty, default: 0, null: false
+      t.integer :bitter, default: 0, null: false
+      t.integer :savory, default: 0, null: false
 
       t.timestamps
     end

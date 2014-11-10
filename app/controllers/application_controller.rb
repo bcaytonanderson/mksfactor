@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
 
   def index
     if current_user
-      redirect_to '/users/index'
+      redirect_to '/users'
     end
   end
   
