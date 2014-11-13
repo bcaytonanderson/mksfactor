@@ -1,10 +1,16 @@
 class ProfilesController < ApplicationController
 
+  def index
+    @cheeses = Cheese.order(:name)
+  end
+
+
+
   def create
     @cheese = Cheese.find(params[:profile][:cheese_id])
     @all = Parameter.all
-    @profile = Profile.new(cheese_id: @cheese.id, user_id: current_user.id)
-    @parameters = params[:parameters]
+    @profile = Profile.new(profile_params)
+    @profile.associations = params[:associations]
     if @profile.save
       redirect_to "/cheeses/#{@profile.cheese_id}"
     else
@@ -20,7 +26,6 @@ class ProfilesController < ApplicationController
   end
 
   def show
-    @profile = Profile.includes(cheese: [{user: :username}], :parameters).where(cheese_id: params[:id], params[:user_id])
   end
 
   def edit
@@ -33,7 +38,7 @@ class ProfilesController < ApplicationController
   private
 
   def profile_params
-    params.require(:profile).permit(:user_id, :cheese_id, :associations)
+    params.require(:profile).permit(:user_id, :cheese_id)
   end
 
 end

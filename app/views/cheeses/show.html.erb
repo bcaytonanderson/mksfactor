@@ -48,9 +48,10 @@
       <li class='story-link'><%= link_to "reviews", "#" %></li>
       <li class='story-link'><%= link_to "pairings", "#" %></li>
     </ul>
-  <%= simple_format(@cheese.story ||= '(not specified)') %></div>
+  <%= simple_format(@cheese.story ||= '(not specified)') %>
+  </div>
 </div>
-
+<div class='by-line'><%= @cheese.user.username %></div>
 
 <script>
   var w = 200,
@@ -61,12 +62,12 @@ var colorscale = d3.scale.category10();
 //Data
 var d = [
       [
-      {axis:"funky",value:<%= ((@cheese.total_scores[:funky] / (@cheese.profiles_count).to_f) + 6/ 36.0) %>},
-      {axis:"sweet",value:<%= ((@cheese.total_scores[:sweet] / (@cheese.profiles_count).to_f) + 6/ 36.0) %>},
-      {axis:"sour",value:<%= ((@cheese.total_scores[:sour] / (@cheese.profiles_count).to_f) + 6/ 36.0) %>},
-      {axis:"salty",value:<%= ((@cheese.total_scores[:salty] / (@cheese.profiles_count).to_f) + 6/ 36.0) %>},
-      {axis:"bitter",value:<%= ((@cheese.total_scores[:bitter] / (@cheese.profiles_count).to_f) + 6/ 36.0) %>},
-      {axis:"savory",value:<%= ((@cheese.total_scores[:savory] / (@cheese.profiles_count).to_f) + 6/ 36.0) %>},
+      {axis:"funky",value:<%= (((@cheese.total_scores[:funky] + 6) / (@cheese.profiles_count).to_f)/ 36.0) %>},
+      {axis:"sweet",value:<%= (((@cheese.total_scores[:sweet] + 6) / (@cheese.profiles_count).to_f)/ 36.0) %>},
+      {axis:"sour",value:<%= (((@cheese.total_scores[:sour]  + 6)/ (@cheese.profiles_count).to_f)/ 36.0) %>},
+      {axis:"salty",value:<%= (((@cheese.total_scores[:salty] + 6) / (@cheese.profiles_count).to_f)/ 36.0) %>},
+      {axis:"bitter",value:<%= (((@cheese.total_scores[:bitter] + 6) / (@cheese.profiles_count).to_f)/ 36.0) %>},
+      {axis:"savory",value:<%= (((@cheese.total_scores[:savory] + 6) / (@cheese.profiles_count).to_f)/ 36.0) %>},
       ]
     ];
  

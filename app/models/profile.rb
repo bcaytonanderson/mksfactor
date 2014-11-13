@@ -16,19 +16,23 @@ class Profile < ActiveRecord::Base
   private
 
   def associate_parameters
-    @associations.each_value do |x|
-      CheeseProfileParameter.create(cheese_id: @cheese_id, profile_id: @id, parameter_id: x)
+    @associations.each_pair do |k,v|
+      if v != 'nil'
+        self.cheese_profile_parameters.create(cheese_id: self.cheese_id, parameter_id: v.to_i)
+      end
     end
   end
 
   def build_values
-    result = {:funky => 0, :sweet => 0, :sour => 0, :salty => 0, :bitter => 0, :savory => 0}
-    parameters = Parameter.joins(:cheese_profile_parameters).where(CheeseProfileParameter: {profile_id: @id})
-     result.each_pair do |k,v|
-      result[k] = parameters.sum(k)
-    end
-    @values = result
+    # factor = self.parameters.size / 6
+    @values = {:funky => (self.parameters.pluck(:funky).inject(0) {|sum, x| sum + x}) * (self.parameters.size / 6),
+     :sweet => (self.parameters.pluck(:sweet).inject(0) {|sum, x| sum + x}) * (self.parameters.size / 6),
+      :sour => (self.parameters.pluck(:sour).inject(0) {|sum, x| sum + x}) * (self.parameters.size / 6),
+       :salty => (self.parameters.pluck(:salty).inject(0) {|sum, x| sum + x}) * (self.parameters.size / 6),
+        :bitter => (self.parameters.pluck(:bitter).inject(0) {|sum, x| sum + x}) * (self.parameters.size / 6),
+         :savory => (self.parameters.pluck(:savory).inject(0) {|sum, x| sum + x}) * (self.parameters.size / 6)}
   end
+
 
 
 end

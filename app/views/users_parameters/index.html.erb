@@ -1,0 +1,17 @@
+<%= form_tag("/users_parameters", method: 'POST') do %>
+<%= @parameters.each do |x| %>
+  <%= x.name %> <select name='users_parameters[<%=x.id%>]' value='nil'>
+                  <option value="nil"></option>
+                    <option value="@funky">funky</option>
+                    <option value="@sweet">sweet</option>
+                    <option value="@sour">sour</option>
+                    <option value="@salty">salty</option>
+                    <option value="@bitter">bitter</option>
+                    <option value="@savory">savory</option>
+                </select><br>
+
+<% end %>
+  <br>
+  <br>
+  <input class='button' type='submit' value='submit'/>
+  <% end %>

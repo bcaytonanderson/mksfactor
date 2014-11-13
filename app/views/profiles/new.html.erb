@@ -5,19 +5,19 @@
   Descriptor 1: <select name='associations[0]' value='nil'>
                   <option value="nil"></option>
                   <% @all.each do |x| %>11
-                    <option value="<%= [x.id] %>"><%= x.name %></option>
+                    <option value="<%= x.id %>"><%= x.name %></option>
                   <% end %>
                 </select>
   Descriptor 2: <select name='associations[1]' value='nil'>
                   <option value="nil"></option>
                   <% @all.each do |x| %>
-                    <option value="<%= [x.id] %>"><%= x.name %></option>
+                    <option value="<%= x.id %>"><%= x.name %></option>
                   <% end %>
                 </select>
   Descriptor 3: <select name='associations[2]' value='nil'>
                   <option value=nil></option>
                   <% @all.each do |x| %>
-                    <option value="<%= [x.id] %>"><%= x.name %></option>
+                    <option value="<%= x.id %>"><%= x.name %></option>
                   <% end %>
                 </select>
                 <br>
@@ -25,23 +25,24 @@
   Descriptor 4: <select name='associations[3]' value='nil'>
                   <option value=nil></option>
                   <% @all.each do |x| %>
-                    <option value="<%= [x.id] %>"><%= x.name %></option>
+                    <option value="<%= x.id %>"><%= x.name %></option>
                   <% end %>
                 </select>
   Descriptor 5: <select name='associations[4]' value='nil'>
                   <option value=nil></option>
                   <% @all.each do |x| %>
-                    <option value="<%= [x.id] %>"><%= x.name %></option>
+                    <option value="<%= x.id %>"><%= x.name %></option>
                   <% end %>
                 </select>
   Descriptor 6: <select name='associations[5]' value='nil'>
                   <option value=nil></option>
                   <% @all.each do |x| %>
-                    <option value="<%= [x.id] %>"><%= x.name %></option>
+                    <option value="<%= x.id %>"><%= x.name %></option>
                   <% end %>
                 </select>
 
   <input type="hidden" name='profile[cheese_id]' value="<%= @cheese.id %>" />
+  <input type="hidden" name='profile[user_id]' value="<%= @cheese.id %>" />
   <br>
   <br>
   <input class='button' type='submit' value='submit'/>

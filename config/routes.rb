@@ -6,15 +6,16 @@ Rails.application.routes.draw do
     root to: "/users"
   end
 
-  resources :users do
-    resources :users_parameters, :only => [:index, :create, :edit, :update]
-  end
+  resources :users
 
   resources :cheeses do
-    resources :profiles do
-      resources :profiles_parameters, :only => [:create, :update, :destroy]
-    end
+    resources :profiles, :only => [:new, :create, :edit, :update, :show]
   end
+
+  resources :users_parameters, :only => [:index, :edit, :update]
+  
+
+  resources :profiles, :only => [:index]
 
 
   # The priority is based upon order of creation: first created -> highest priority.

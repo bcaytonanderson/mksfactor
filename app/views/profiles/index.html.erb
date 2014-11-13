@@ -1,10 +1,9 @@
-
-<div id='header'><h4>factor</h4></div>
+<div id='header'><h4>select a cheese to assess</h4></div>
 
   <div id='container' class='clear'>
 
   <div class='cheese-list'>
-  <div class='clear'>  
+
   <ul class='cheese-index-left'>
     <li class='index-header'><h2>A - <%= @cheeses[@cheeses.length/2.0.ceil].name.split('').first%></h2></li>
     <% @cheeses.slice(0, (@cheeses.length/2.0).ceil).each do |x| %>
@@ -33,23 +32,9 @@
     <% end %>
   </ul>
 
-  </div>
-  <ul class='cheese-list-nav'>
-    <li class='cheese-list-nav-link'><%= link_to "home", root_path %></li>
-    <li class='cheese-list-nav-link'><%= link_to "create entry", new_cheese_path %></li>
-    <li class='cheese-list-nav-link'><%= link_to "new profile", profiles_path %></li>
-  </ul>
-  
+
 
 
 
   </div>
 </div>
-  
-<!-- 
-  def split_array(array)
-    result = []
-    result.push(array.slice(0, (array.length/2.0).ceil))
-    result.push(array.slice((array.length/2.0).ceil, (array.length/2.0).floor))
-    return result
-  end -->

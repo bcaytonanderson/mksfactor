@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141110171307) do
+ActiveRecord::Schema.define(version: 20141112203602) do
 
   create_table "cheese_profile_parameters", force: true do |t|
     t.integer "profile_id"
@@ -39,17 +39,15 @@ ActiveRecord::Schema.define(version: 20141110171307) do
   end
 
   create_table "parameters", force: true do |t|
-    t.string   "name",                                   null: false
-    t.integer  "funky",                  default: 0,     null: false
-    t.integer  "sweet",                  default: 0,     null: false
-    t.integer  "sour",                   default: 0,     null: false
-    t.integer  "salty",                  default: 0,     null: false
-    t.integer  "bitter",                 default: 0,     null: false
-    t.integer  "savory",                 default: 0,     null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.boolean  "editable",               default: false
-    t.integer  "users_parameters_count", default: 0,     null: false
+    t.string  "name",                                  null: false
+    t.integer "funky",                  default: 0,    null: false
+    t.integer "sweet",                  default: 0,    null: false
+    t.integer "sour",                   default: 0,    null: false
+    t.integer "salty",                  default: 0,    null: false
+    t.integer "bitter",                 default: 0,    null: false
+    t.integer "savory",                 default: 0,    null: false
+    t.integer "users_parameters_count", default: 0,    null: false
+    t.boolean "open",                   default: true, null: false
   end
 
   create_table "profiles", force: true do |t|
@@ -57,6 +55,7 @@ ActiveRecord::Schema.define(version: 20141110171307) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "parameters_count", default: 0
   end
 
   create_table "users", force: true do |t|

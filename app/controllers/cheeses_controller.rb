@@ -3,11 +3,7 @@ class CheesesController < ApplicationController
 
    
   def index
-    @cheeses = Hash.new
-    Cheese.all.each do |x|
-      (@cheeses[x.style] ||= []).push(x)
-    end
-    @cheeses.each_value {|value| value.sort_by! {|x| x.name } }
+    @cheeses = Cheese.order(:name)
   end
 
   def create
@@ -21,11 +17,11 @@ class CheesesController < ApplicationController
 
   def new
     @cheese = Cheese.new(user_id: current_user.id)
-    @all = parameters.all
   end
 
   def show
     @cheese = Cheese.includes(:parameters).find(params[:id])
+    @cheese.build_values
     if @cheese.profiles.exists?(:cheese_id => @cheese.id)
       @profiles = @profiles
     else 
