@@ -1,11 +1,11 @@
 <div id='header'>
     <ul class='nav-list'>
       <li class='nav-button'><%= link_to "guide", "#"%></li>
-      <li class='nav-button'><%= link_to "cheeses", "#"%></li>
+      <li class='nav-button'><%= link_to "cheeses", cheeses_path%></li>
       <li class='nav-button'><%= link_to "profiles", "#"%></li>
       <li class='nav-button'><%= link_to "invitations", "#"%></li>
-      <li class='nav-button'><%= link_to "parameters", "#"%></li>
-      <li class='nav-button'><%= link_to "sign out", "#"%></li>
+      <li class='nav-button'><%= link_to "parameters", users_parameters_path %></li>
+      <li class='nav-button'><%= link_to "sign out", destroy_user_session_path, :method => :delete %></li>
     </ul>
 </div>
 

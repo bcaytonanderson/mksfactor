@@ -11,6 +11,7 @@ class Cheese < ActiveRecord::Base
   has_many :cheese_profile_parameters
   has_many :parameters, through: :cheese_profile_parameters
 
+  after_find :build_values
 
   def build_values
     parameters = self.parameters

@@ -46,3 +46,5 @@ gem 'devise'
 gem 'hirb'
 
 gem 'rspec-rails'
+
+gem 'pg'

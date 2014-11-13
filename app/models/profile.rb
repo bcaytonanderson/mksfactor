@@ -25,12 +25,12 @@ class Profile < ActiveRecord::Base
 
   def build_values
     # factor = self.parameters.size / 6
-    @values = {:funky => (self.parameters.pluck(:funky).inject(0) {|sum, x| sum + x}) * (self.parameters.size / 6),
-     :sweet => (self.parameters.pluck(:sweet).inject(0) {|sum, x| sum + x}) * (self.parameters.size / 6),
-      :sour => (self.parameters.pluck(:sour).inject(0) {|sum, x| sum + x}) * (self.parameters.size / 6),
-       :salty => (self.parameters.pluck(:salty).inject(0) {|sum, x| sum + x}) * (self.parameters.size / 6),
-        :bitter => (self.parameters.pluck(:bitter).inject(0) {|sum, x| sum + x}) * (self.parameters.size / 6),
-         :savory => (self.parameters.pluck(:savory).inject(0) {|sum, x| sum + x}) * (self.parameters.size / 6)}
+    @values = {:funky => self.parameters.sum(:funky) * (self.parameters.size / 6),
+     :sweet => self.parameters.sum(:sweet) * (self.parameters.size / 6),
+      :sour => self.parameters.sum(:sour) * (self.parameters.size / 6),
+       :salty => self.parameters.sum(:salty) * (self.parameters.size / 6),
+        :bitter => self.parameters.sum(:bitter) * (self.parameters.size / 6),
+         :savory => self.parameters.sum(:savory) * (self.parameters.size / 6)}
   end
 
 

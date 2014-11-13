@@ -12,12 +12,12 @@ class Parameter < ActiveRecord::Base
 
   def calculate_values
     if (self.users_parameters && self.open)
-      self.funky = (self.funky + self.users_parameters.inject(0) {|sum, x| sum + x.values[:funky]}) / (self.users_parameters_count + 1)
-      self.sweet = (self.sweet + self.users_parameters.inject(0) {|sum, x| sum + x.values[:sweet]}) / (self.users_parameters_count + 1)
-      self.sour = (self.sour + self.users_parameters.inject(0) {|sum, x| sum + x.values[:sour]}) / (self.users_parameters_count + 1)
-      self.salty = (self.salty + self.users_parameters.inject(0) {|sum, x| sum + x.values[:salty]}) / (self.users_parameters_count + 1)
-      self.bitter = (self.bitter + self.users_parameters.inject(0) {|sum, x| sum + x.values[:bitter]}) / (self.users_parameters_count + 1)
-      self.savory = (self.savory + self.users_parameters.inject(0) {|sum, x| sum + x.values[:savory]}) / (self.users_parameters_count + 1)
+      self.funky = (self.funky + self.users_parameters.sum(:funky)) / (self.users_parameters_count + 1)
+      self.sweet = (self.sweet + self.users_parameters.sum(:sweet)) / (self.users_parameters_count + 1)
+      self.sour = (self.sour + self.users_parameters.sum(:sour)) / (self.users_parameters_count + 1)
+      self.salty = (self.salty + self.users_parameters.sum(:salty)) / (self.users_parameters_count + 1)
+      self.bitter = (self.bitter + self.users_parameters.sum(:bitter)) / (self.users_parameters_count + 1)
+      self.savory = (self.savory + self.users_parameters.sum(:savory)) / (self.users_parameters_count + 1)
       self.save
     end
     return self

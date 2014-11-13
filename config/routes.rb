@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     resources :profiles, :only => [:new, :create, :edit, :update, :show]
   end
 
-  resources :users_parameters, :only => [:index, :edit, :update]
+  resources :users_parameters, :only => [:index, :create, :edit, :update]
   
 
   resources :profiles, :only => [:index]

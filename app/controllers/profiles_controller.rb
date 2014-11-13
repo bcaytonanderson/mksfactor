@@ -7,8 +7,6 @@ class ProfilesController < ApplicationController
 
 
   def create
-    @cheese = Cheese.find(params[:profile][:cheese_id])
-    @all = Parameter.all
     @profile = Profile.new(profile_params)
     @profile.associations = params[:associations]
     if @profile.save

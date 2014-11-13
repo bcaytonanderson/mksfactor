@@ -1,7 +1,6 @@
 class CheesesController < ApplicationController
   before_action :authenticate_user!
 
-   
   def index
     @cheeses = Cheese.order(:name)
   end

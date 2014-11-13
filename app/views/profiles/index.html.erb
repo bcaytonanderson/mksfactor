@@ -8,7 +8,7 @@
     <li class='index-header'><h2>A - <%= @cheeses[@cheeses.length/2.0.ceil].name.split('').first%></h2></li>
     <% @cheeses.slice(0, (@cheeses.length/2.0).ceil).each do |x| %>
       <li class='cheese-index-item'>
-        <%= link_to cheese_path(x.id) do%>
+        <%= link_to new_cheese_profile_path(x.id) do%>
           <div class='cheese-index-button'>
             <span class='cheese-index-text'><%= x.name %></span>
             <span class='cheese-index-text'><%= x.producer %></span>
@@ -22,7 +22,7 @@
     <li class='index-header'><h2><%= @cheeses[@cheeses.length/2.0.floor + 1].name.split('').first%> - Z</h2></li>
     <% @cheeses.slice((@cheeses.length/2.0).ceil, (@cheeses.length/2.0).floor).each do |x| %>
       <li class='cheese-index-item'>
-        <%= link_to cheese_path(x.id) do%>
+        <%= link_to new_cheese_profile_path(x.id) do%>
           <div class='cheese-index-button'>
             <span class='cheese-index-text'><%= x.name %></span>
             <span class='cheese-index-text'><%= x.producer %></span>
