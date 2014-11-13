@@ -13,13 +13,13 @@ class Cheese < ActiveRecord::Base
 
 
   def build_values
-    @joins = self.cheese_profile_parameters
-    result = {:funky => @parameters.sum(:funky),
-     :sweet => @parameters.sum(:sweet),
-      :sour => @parameters.sum(:sour),
-       :salty => @parameters.sum(:salty),
-        :bitter => @parameters.sum(:bitter),
-         :savory => @parameters.sum(:savory)}
+    parameters = self.parameters
+    result = {:funky => parameters.sum(:funky),
+     :sweet => parameters.sum(:sweet),
+      :sour => parameters.sum(:sour),
+       :salty => parameters.sum(:salty),
+        :bitter => parameters.sum(:bitter),
+         :savory => parameters.sum(:savory)}
      self.total_scores = result
   end
 
