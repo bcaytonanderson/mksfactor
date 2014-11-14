@@ -36,7 +36,7 @@
     <td><h5>Availability: </h5></td><td><p><%= (@cheese.availability ||= '(not specified)') %></p></td>
     </tr>
     </table>
-  <ul class='info-nav'>
+  <ul class='info-nav cheese-show'>
       <li class='info-link'><%= link_to "edit", edit_cheese_path(@cheese.id)%></li>
       <li class='info-link'><%= link_to "pair", "#" %></li>
     </ul>

@@ -11,16 +11,16 @@ class Cheese < ActiveRecord::Base
   has_many :cheese_profile_parameters
   has_many :parameters, through: :cheese_profile_parameters
 
-  after_find :build_values
-
   def build_values
     parameters = self.parameters
-    result = {:funky => parameters.sum(:funky),
-     :sweet => parameters.sum(:sweet),
-      :sour => parameters.sum(:sour),
-       :salty => parameters.sum(:salty),
-        :bitter => parameters.sum(:bitter),
-         :savory => parameters.sum(:savory)}
+    result = {
+      :funky  => parameters.sum(:funky),
+      :sweet  => parameters.sum(:sweet),
+      :sour   => parameters.sum(:sour),
+      :salty  => parameters.sum(:salty),
+      :bitter => parameters.sum(:bitter),
+      :savory => parameters.sum(:savory)
+      }
      self.total_scores = result
   end
 

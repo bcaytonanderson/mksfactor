@@ -102,18 +102,15 @@ input.button {
   .nav-list {
     width: 100%;
     margin: 0;
-    padding: 0;
-    text-align: center;
+    padding: 0 5px;
+    text-align: left;
     .nav-button {
       box-sizing: border-box;
       display: inline-block;
-      margin: 0 auto;
-      // height: 83px;
-      // line-height: 83px;
-      // padding: 4px 0;
+      margin: 0;
       width: (500px/6);
       font-family: Times, serif;
-      font-size: 1.5em;
+      font-size: 1.25em;
       font-weight: 600;
       color: white;
       border: 2px solid $blue;
@@ -153,7 +150,7 @@ input.button {
     th {
       text-align: center;
       overflow-y: hidden;
-      height: 38px;
+      height: 39px;
       padding: 2px 2px 0 2px;
       vertical-align: top;
 

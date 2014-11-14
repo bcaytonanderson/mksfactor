@@ -10,7 +10,7 @@ class ProfilesController < ApplicationController
     @profile = Profile.new(profile_params)
     @profile.associations = params[:associations]
     if @profile.save
-      redirect_to "/cheeses/#{@profile.cheese_id}"
+      redirect_to cheeses_path(@profile.cheese_id)
     else
       render 'new'
     end

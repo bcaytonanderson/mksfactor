@@ -42,7 +42,7 @@
                 </select>
 
   <input type="hidden" name='profile[cheese_id]' value="<%= @cheese.id %>" />
-  <input type="hidden" name='profile[user_id]' value="<%= @cheese.id %>" />
+  <input type="hidden" name='profile[user_id]' value="<%= current_user.id %>" />
   <br>
   <br>
   <input class='button' type='submit' value='submit'/>

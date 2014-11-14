@@ -1,55 +1,56 @@
 <div id='header'>
     <ul class='nav-list'>
-      <li class='nav-button'><%= link_to "guide", "#"%></li>
-      <li class='nav-button'><%= link_to "cheeses", cheeses_path%></li>
-      <li class='nav-button'><%= link_to "profiles", "#"%></li>
-      <li class='nav-button'><%= link_to "invitations", "#"%></li>
-      <li class='nav-button'><%= link_to "parameters", users_parameters_path %></li>
       <li class='nav-button'><%= link_to "sign out", destroy_user_session_path, :method => :delete %></li>
+      <li class='nav-button'></li>
+      <li class='nav-button'></li>
+      <li class='nav-button'></li>
+      <li class='nav-button'></li>
+      <li class='nav-button'></li>
     </ul>
 </div>
 
-  <div id='container' class='clear'>
+<div id='container' class='clear'>
 
 
-<div class='info clear'>
-  <div id='index-left-container'>
-  <h2>factor</h2>
-    <ul class='nav-list'>
-      <li class='nav-button'><%= link_to "cheeses", cheeses_path %></li>
-      <li class='nav-button'><%= link_to "invitations", "#"%></li>
-      <li class='nav-button'><%= link_to "philosophy", "#"%></li>
-      <li class='nav-button'><%= link_to "set parameters", users_parameters_path%></li>
-      <li class='nav-button'><%= link_to "feedback", "#"%></li>
-    </ul>
+  <div class='info clear'>
+    <div id='index-left-container'>
+    <h2>factor</h2>
+      <ul class='nav-list'>
+        <li class='nav-button'><%= link_to "cheeses", cheeses_path %></li>
+        <li class='nav-button'><%= link_to "invitations", "#"%></li>
+        <li class='nav-button'><%= link_to "philosophy", "#"%></li>
+        <li class='nav-button'><%= link_to "set parameters", users_parameters_path%></li>
+        <li class='nav-button'><%= link_to "feedback", "#"%></li>
+      </ul>
+    </div>
+
+    <div id='index-right-container' class='clear'>
+      <table>
+          <tr>
+        <th colspan="2"><h5 class="user-name"><%= current_user.username %></h5></th>
+          </tr>
+          <tr>
+        <td><h5>Member since: </h5></td><td><p><%= ((Time.new - current_user.created_at) / 60).floor %> minutes ago</p></td>
+        </tr>
+        <tr>
+        <td><h5>Entries: </h5></td><td><p><%= @user.cheeses.length %> cheeses created</p></td>
+        </tr>
+        <tr>
+        <td><h5>Profiles: </h5></td><td><p><%= @user.profiles.length %> profiles submitted</p></td>
+        </tr>
+        <tr>
+        <td><h5>Customized: </h5></td><td><p><%= @user.users_parameters.length %> parameters set</p></td>
+        </tr>
+        <tr>
+        <td><h5>Experience: </h5></td><td><p>3.5 years</p></td>
+        </tr>
+        <tr>
+        <td><h5>Favorite Cheese: </h5></td><td><p>Fourme d'Ambert</p></td>
+        </tr>
+        </table>
+    </div>
   </div>
-
-  <div id='index-right-container' class='clear'>
-  <table>
-      <tr>
-    <th colspan="2"><h5 class="user-name"><%= current_user.username %></h5></th>
-      </tr>
-      <tr>
-    <td><h5>Member since: </h5></td><td><p><%= ((Time.new - current_user.created_at) / 60).floor %> minutes ago</p></td>
-    </tr>
-    <tr>
-    <td><h5>Entries: </h5></td><td><p><%= @user.cheeses.length %> cheeses created</p></td>
-    </tr>
-    <tr>
-    <td><h5>Profiles: </h5></td><td><p><%= @user.profiles.length %> profiles submitted</p></td>
-    </tr>
-    <tr>
-    <td><h5>Customized: </h5></td><td><p><%= @user.users_parameters.length %> parameters set</p></td>
-    </tr>
-    <tr>
-    <td><h5>Experience: </h5></td><td><p>3.5 years<p></td>
-    </tr>
-    <tr>
-    <td><h5>Favorite Cheese: </h5></td><td><p>Fourme d'Ambert</p></td>
-    </tr>
-    </table>
-  </div>
-
+</div>
 
 
 
