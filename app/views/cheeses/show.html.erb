@@ -54,35 +54,37 @@
 </div>
 
 <script>
-  var w = 200,
-      h = 200;
- 
-var colorscale = d3.scale.category10();
-  
-//Data
-var d = [
-      [
-      {axis:"funky",value:<%= ((((@cheese.total_scores[:funky] + 6) / (@cheese.profiles_count).to_f) + 6)/ 36.0) %>},
-      {axis:"sweet",value:<%= ((((@cheese.total_scores[:sweet] + 6) / (@cheese.profiles_count).to_f) + 6)/ 36.0) %>},
-      {axis:"sour",value:<%= ((((@cheese.total_scores[:sour]  + 6)/ (@cheese.profiles_count).to_f) + 6)/ 36.0) %>},
-      {axis:"salty",value:<%= ((((@cheese.total_scores[:salty] + 6) / (@cheese.profiles_count).to_f) + 6)/ 36.0) %>},
-      {axis:"bitter",value:<%= ((((@cheese.total_scores[:bitter] + 6) / (@cheese.profiles_count).to_f) + 6)/ 36.0) %>},
-      {axis:"savory",value:<%= ((((@cheese.total_scores[:savory] + 6) / (@cheese.profiles_count).to_f) + 6)/ 36.0) %>},
-      ]
-    ];
- 
-//Options for the Radar chart, other than default
-var mycfg = {
-  w: w,
-  h: h,
-  maxValue: 1.0,
-  levels: 3,
-  ExtraWidthX: 107
-}
- 
-//Call function to draw the Radar chart
-//Will expect that data is in %'s
-RadarChart.draw("#chart", d, mycfg);
+  $(document).ready(function() {
+    var w = 200,
+        h = 200;
+   
+    var colorscale = d3.scale.category10();
+      
+    //Data
+    var d = [
+          [
+          {axis:"funky",value:<%= ((((@cheese.total_scores[:funky] + 6) / (@cheese.profiles_count).to_f) + 6)/ 36.0) %>},
+          {axis:"sweet",value:<%= ((((@cheese.total_scores[:sweet] + 6) / (@cheese.profiles_count).to_f) + 6)/ 36.0) %>},
+          {axis:"sour",value:<%= ((((@cheese.total_scores[:sour]  + 6)/ (@cheese.profiles_count).to_f) + 6)/ 36.0) %>},
+          {axis:"salty",value:<%= ((((@cheese.total_scores[:salty] + 6) / (@cheese.profiles_count).to_f) + 6)/ 36.0) %>},
+          {axis:"bitter",value:<%= ((((@cheese.total_scores[:bitter] + 6) / (@cheese.profiles_count).to_f) + 6)/ 36.0) %>},
+          {axis:"savory",value:<%= ((((@cheese.total_scores[:savory] + 6) / (@cheese.profiles_count).to_f) + 6)/ 36.0) %>},
+          ]
+        ];
+     
+    //Options for the Radar chart, other than default
+    var mycfg = {
+      w: w,
+      h: h,
+      maxValue: 1.0,
+      levels: 3,
+      ExtraWidthX: 107
+    }
+     
+    //Call function to draw the Radar chart
+    //Will expect that data is in %'s
+    RadarChart.draw("#chart", d, mycfg);
+  });
 
 
 </script>
