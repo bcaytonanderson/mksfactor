@@ -58,6 +58,14 @@ ActiveRecord::Schema.define(version: 20141112203602) do
     t.integer  "parameters_count", default: 0
   end
 
+  create_table "profiles_parameters", id: false, force: true do |t|
+    t.integer "parameter_id", null: false
+    t.integer "profile_id",   null: false
+  end
+
+  add_index "profiles_parameters", ["parameter_id"], name: "index_profiles_parameters_on_parameter_id"
+  add_index "profiles_parameters", ["profile_id"], name: "index_profiles_parameters_on_profile_id"
+
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
